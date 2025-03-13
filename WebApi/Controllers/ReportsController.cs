@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Services;
 using WebApi.Requests;
+using WebApi.ViewModels;
 
 namespace CarServiceSystem.Api.Controllers;
 
@@ -14,7 +15,7 @@ public class ReportsController(IAutomobileService automobileService, IMasterServ
         var autoReport = automobileService.GetRepairingAutomobilesByDate(reportRequest);
         var masterWorkLoadReport = masterService.GetPercentageOfMasterWorkload(reportRequest.Start, reportRequest.End);
 
-        var results = new { Autos = autoReport, MastersWorkLoads = masterWorkLoadReport };
+        ReportViewModel results = new (autoReport, masterWorkLoadReport);
 
         return Ok(results);
     }

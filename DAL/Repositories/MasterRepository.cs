@@ -14,7 +14,7 @@ internal class MasterRepository(CarServiceSystemContext context) : IMasterReposi
             .Include(w=>w.Master)
             .Where(w => w.RepairDate >= startDate && w.RepairDate <= endDate);
 
-        float workRecordsCount = (float) workRecordsQuery.Count();
+        float workRecordsCount = workRecordsQuery.Count();
 
         var masters = workRecordsQuery.GroupBy(w => w.Master!)
             .ToDictionary(

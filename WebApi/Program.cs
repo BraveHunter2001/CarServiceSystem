@@ -17,10 +17,6 @@ namespace CarServiceSystem.Api
 
             builder.Services.AddControllers();
 
-
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
             string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
             builder.Services.AddCors(options =>
             {
@@ -34,13 +30,6 @@ namespace CarServiceSystem.Api
             });
 
             var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
 
             app.UseCors(MyAllowSpecificOrigins);
             app.MapControllers();
