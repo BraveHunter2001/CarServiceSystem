@@ -15,7 +15,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { useState } from "react";
 
-const DetailRow = ({ row, index }) => {
+const DetailRow = ({ row }) => {
   const [open, setOpen] = useState(false);
 
   return (

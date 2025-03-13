@@ -70,12 +70,8 @@ function App() {
         </Grid2>
         <Grid2 size={6}>
           <FormControl variant="standard" sx={{ minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-standard-label">
-              Сортировать по
-            </InputLabel>
+            <InputLabel>Сортировать по</InputLabel>
             <Select
-              labelId="demo-simple-select-standard-label"
-              id="demo-simple-select-standard"
               value={sortBy}
               onChange={(event) => setSortBy(event.target.value)}
               label="Сортировать"
@@ -88,12 +84,8 @@ function App() {
         </Grid2>
         <Grid2 size={6}>
           <FormControl variant="standard" sx={{ minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-standard-label">
-              Направление
-            </InputLabel>
+            <InputLabel>Направление</InputLabel>
             <Select
-              labelId="demo-simple-select-standard-label"
-              id="demo-simple-select-standard"
               value={sortDir}
               onChange={(event) => setSortDir(event.target.value)}
               label="Сортировать"
