@@ -4,9 +4,7 @@ import {
   Grid2,
   InputLabel,
   MenuItem,
-  Paper,
   Select,
-  Stack,
 } from "@mui/material";
 import { MonthCalendar } from "@mui/x-date-pickers";
 import axios from "axios";
@@ -14,6 +12,7 @@ import dayjs from "dayjs";
 import { useState } from "react";
 import { MasterWorkLoadsTable } from "./MasterWorkLoadsTable";
 import AutomobileTable from "./AutomobileTable";
+import { BACKEND_URL } from "../constants";
 
 const SORT_BY = {
   Brand: 0,
@@ -27,7 +26,6 @@ const SORT_DIR = {
 };
 
 const initDate = dayjs().month(4).date(1);
-const BACKEND_URL = "http://localhost:5134/api/";
 
 function App() {
   const [currentMonth, setMonth] = useState(initDate);

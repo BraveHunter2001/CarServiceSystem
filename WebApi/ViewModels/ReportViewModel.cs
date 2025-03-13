@@ -4,8 +4,8 @@ namespace WebApi.ViewModels;
 
 public class ReportViewModel
 {
-    AutomobileReportItem[] Autos { get; set; }
-    MasterWorkLoadReportItem[] MastersWorkLoads { get; set; }
+    public AutomobileReportItem[] Autos { get; set; }
+    public MasterWorkLoadReportItem[] MastersWorkLoads { get; set; }
 
     public ReportViewModel(AutomobileReportItem[] autos, MasterWorkLoadReportItem[] mastersWorkLoads)
     {

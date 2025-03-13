@@ -33,7 +33,8 @@ public class AutomobileReportItem
             .Select(w =>
                 new MasterCostReportItem(
                     w.Key!.Fullname,
-                    w.Sum(g => g.Cost)
+                    w.Sum(g => g.Cost),
+                    w.Count()
                 )
             ).ToArray() ?? [];
 
@@ -48,12 +49,13 @@ public class AutomobileReportItem
 public class MasterCostReportItem
 {
     public string Fullname { get; set; }
-    public DateTime LastWorkDate { get; set; }
+    public int WorkCount { get; set; }
     public decimal Cost { get; set; }
 
-    public MasterCostReportItem(string fullname, decimal cost)
+    public MasterCostReportItem(string fullname, decimal cost, int workCount)
     {
         Fullname = fullname;
         Cost = cost;
+        WorkCount = workCount;
     }
 }

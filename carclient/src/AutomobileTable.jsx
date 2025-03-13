@@ -50,6 +50,7 @@ const DetailRow = ({ row, index }) => {
                 <TableHead>
                   <TableRow>
                     <TableCell>Мастер</TableCell>
+                    <TableCell>кол-во работ</TableCell>
                     <TableCell>Цена</TableCell>
                   </TableRow>
                 </TableHead>
@@ -58,6 +59,9 @@ const DetailRow = ({ row, index }) => {
                     <TableRow key={itemIndex}>
                       <TableCell component="th" scope="row">
                         {item.fullname}
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                        {item.workCount}
                       </TableCell>
                       <TableCell align="right">{item.cost}</TableCell>
                     </TableRow>
