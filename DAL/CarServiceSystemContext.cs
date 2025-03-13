@@ -7,7 +7,6 @@ public class CarServiceSystemContext : DbContext
 {
     public CarServiceSystemContext(DbContextOptions<CarServiceSystemContext> options) : base(options)
     {
-        //AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
     }
 
     public DbSet<Owner> Owners { get; set; }

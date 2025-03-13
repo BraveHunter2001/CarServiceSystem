@@ -10,7 +10,6 @@ public static class DI
     {
         services.AddDbContext<CarServiceSystemContext>(ctx =>
         {
-            // ctx.UseNpgsql(connectionString);
             ctx.UseSqlServer(connectionString);
         });
 

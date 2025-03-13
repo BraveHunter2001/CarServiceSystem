@@ -35,11 +35,13 @@ function App() {
   const [sortBy, setSortBy] = useState(SORT_BY.Brand);
   const [sortDir, setSortDir] = useState(SORT_DIR.Asc);
 
+  const [isLoading, setLoading] = useState(false);
   const handleGetReport = async () => {
     const daysOfMounth = currentMonth.daysInMonth();
     const end = currentMonth.date(daysOfMounth);
 
     try {
+      setLoading(true);
       const response = await axios.get(BACKEND_URL + "Reports", {
         params: {
           start: currentMonth.format(),
@@ -53,6 +55,8 @@ function App() {
       setAutomibiles(response.data.autos);
     } catch (error) {
       console.error("Ошибка запроса:", error);
+    } finally {
+      setLoading(false);
     }
   };
   return (
@@ -100,8 +104,12 @@ function App() {
           </FormControl>
         </Grid2>
         <Grid2 size={12}>
-          <Button variant="contained" onClick={handleGetReport}>
-            Получить отчет по машинам
+          <Button
+            variant="contained"
+            onClick={handleGetReport}
+            loading={isLoading}
+          >
+            Получить отчет
           </Button>
         </Grid2>
       </Grid2>
